@@ -5,47 +5,47 @@ import { MapPin } from 'lucide-react';
 const projectPins = [{
   name: "Luxembourg City",
   x: 52,
-  y: 58,
+  y: 62,
   mw: 12.5
 }, {
   name: "Esch-sur-Alzette",
   x: 35,
-  y: 75,
+  y: 79,
   mw: 18.3
 }, {
   name: "Differdange",
   x: 28,
-  y: 72,
+  y: 76,
   mw: 8.7
 }, {
   name: "Dudelange",
   x: 45,
-  y: 78,
+  y: 82,
   mw: 15.2
 }, {
   name: "Ettelbruck",
   x: 48,
-  y: 32,
+  y: 36,
   mw: 9.8
 }, {
   name: "Diekirch",
   x: 55,
-  y: 28,
+  y: 32,
   mw: 22.1
 }, {
   name: "Wiltz",
   x: 30,
-  y: 15,
+  y: 19,
   mw: 14.6
 }, {
   name: "Echternach",
   x: 78,
-  y: 42,
+  y: 46,
   mw: 11.4
 }, {
   name: "Grevenmacher",
   x: 75,
-  y: 62,
+  y: 66,
   mw: 7.9
 }, {
   name: "Remich",
@@ -55,27 +55,27 @@ const projectPins = [{
 }, {
   name: "Mersch",
   x: 48,
-  y: 45,
+  y: 49,
   mw: 19.2
 }, {
   name: "Redange",
   x: 22,
-  y: 38,
+  y: 42,
   mw: 10.5
 }, {
   name: "Vianden",
   x: 58,
-  y: 18,
+  y: 22,
   mw: 25.4
 }, {
   name: "Clervaux",
   x: 42,
-  y: 8,
+  y: 12,
   mw: 16.7
 }, {
   name: "Capellen",
   x: 38,
-  y: 62,
+  y: 64,
   mw: 12.1
 }];
 export default function LuxembourgMap() {
