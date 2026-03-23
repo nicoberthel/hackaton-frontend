@@ -3,11 +3,13 @@ services:
     build: ../hackaton-backend  # adjust path to your backend repo
     ports:
       - "8000:8000"
+    restart: unless-stopped
 
   frontend:
     build: .
     ports:
       - "8080:8080"
+    restart: unless-stopped
     volumes:
       - .:/app
       - /app/node_modules
