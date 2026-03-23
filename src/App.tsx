@@ -4,19 +4,21 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { UserProvider } from "./contexts/UserContext";
+import { lazy, Suspense } from "react";
 import Layout from "./components/Layout";
-import HomePage from "./pages/HomePage";
-import ProfilePage from "./pages/ProfilePage";
-import RecommendationsPage from "./pages/RecommendationsPage";
-import OpportunitiesPage from "./pages/OpportunitiesPage";
-import OpportunitiesDynPage from "./pages/OpportunitiesDynPage";
-import ConfirmationPage from "./pages/ConfirmationPage";
-import DashboardPage from "./pages/DashboardPage";
-import InvoiceIntegrationPage from "./pages/InvoiceIntegrationPage";
-import CommunityPage from "./pages/CommunityPage";
-import CustomerProfilePage from "./pages/CustomerProfilePage";
-import PortfolioPage from "./pages/PortfolioPage";
-import NotFound from "./pages/NotFound";
+
+const HomePage = lazy(() => import("./pages/HomePage"));
+const ProfilePage = lazy(() => import("./pages/ProfilePage"));
+const RecommendationsPage = lazy(() => import("./pages/RecommendationsPage"));
+const OpportunitiesPage = lazy(() => import("./pages/OpportunitiesPage"));
+const OpportunitiesDynPage = lazy(() => import("./pages/OpportunitiesDynPage"));
+const ConfirmationPage = lazy(() => import("./pages/ConfirmationPage"));
+const DashboardPage = lazy(() => import("./pages/DashboardPage"));
+const InvoiceIntegrationPage = lazy(() => import("./pages/InvoiceIntegrationPage"));
+const CommunityPage = lazy(() => import("./pages/CommunityPage"));
+const CustomerProfilePage = lazy(() => import("./pages/CustomerProfilePage"));
+const PortfolioPage = lazy(() => import("./pages/PortfolioPage"));
+const NotFound = lazy(() => import("./pages/NotFound"));
 
 const queryClient = new QueryClient();
 
@@ -27,6 +29,7 @@ const App = () => (
         <Toaster />
         <Sonner />
         <BrowserRouter future={{ v7_relativeSplatPath: true, v7_startTransition: true }}>
+        <Suspense fallback={<div className="flex items-center justify-center min-h-screen"><div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary" /></div>}>
         <Routes>
           <Route element={<Layout />}>
             <Route path="/" element={<HomePage />} />
@@ -44,6 +47,7 @@ const App = () => (
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
+        </Suspense>
       </BrowserRouter>
     </TooltipProvider>
     </UserProvider>
