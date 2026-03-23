@@ -74,7 +74,7 @@ export const usePortfolio = (userId: string = "user_001") => {
   return useQuery({
     queryKey: ["portfolio", userId],
     queryFn: () => fetchPortfolio(userId),
-    staleTime: 5 * 60 * 1000, // 5 minutes
-    refetchOnWindowFocus: true,
+    staleTime: 15 * 60 * 1000, // 15 minutes
+    refetchOnWindowFocus: false,
   });
 };

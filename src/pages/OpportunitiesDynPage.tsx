@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -84,9 +84,10 @@ export default function OpportunitiesDynPage() {
     return portfolio.investments.some(inv => inv.project_id === projectId);
   };
 
-  const filteredProjects = filter === "all" 
-    ? projects 
-    : projects?.filter((p) => p.energy.toLowerCase() === filter);
+  const filteredProjects = useMemo(
+    () => filter === "all" ? projects : projects?.filter((p) => p.energy.toLowerCase() === filter),
+    [projects, filter]
+  );
 
   const getIcon = (energy: string) => {
     const lowerEnergy = energy.toLowerCase();

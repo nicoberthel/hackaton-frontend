@@ -1,4 +1,4 @@
-import luxembourgMap from '@/assets/luxembourg-map.png';
+import luxembourgMap from '@/assets/luxembourg-map.webp';
 import { MapPin } from 'lucide-react';
 
 // Investment project locations (positions in percentage from top-left of map)
