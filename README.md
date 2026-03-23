@@ -18,9 +18,37 @@ Changes made via Lovable will be committed automatically to this repo.
 
 If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### Option 1: Docker (recommended)
 
-Follow these steps:
+Requires [Docker](https://docs.docker.com/get-docker/) and Docker Compose.
+
+**With a backend running in another Docker container:**
+
+Update `docker-compose.yml` to point `build` to your backend repo path, then:
+
+```sh
+docker compose up
+```
+
+**With a backend running natively on your machine:**
+
+Set `API_URL=http://host.docker.internal:8000` in `docker-compose.yml`, then:
+
+```sh
+docker compose up
+```
+
+The app will be available at http://localhost:8080. Source changes are reflected immediately without rebuilding.
+
+To rebuild after dependency changes (`package.json`):
+
+```sh
+docker compose up --build
+```
+
+### Option 2: Node.js directly
+
+Requires Node.js & npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
 
 ```sh
 # Step 1: Clone the repository using the project's Git URL.

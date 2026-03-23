@@ -10,7 +10,7 @@ export default defineConfig(({ mode }) => ({
     port: 8080,
     proxy: {
       '/api': {
-        target: 'http://127.0.0.1:8000',
+        target: process.env.API_URL || 'http://host.docker.internal:8000',
         //target: 'http://44.249.168.221:8000',
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, ''),

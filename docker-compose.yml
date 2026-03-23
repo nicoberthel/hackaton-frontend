@@ -1,0 +1,18 @@
+services:
+  backend:
+    build: ../hackaton-backend  # adjust path to your backend repo
+    ports:
+      - "8000:8000"
+
+  frontend:
+    build: .
+    ports:
+      - "8080:8080"
+    volumes:
+      - .:/app
+      - /app/node_modules
+    environment:
+      - NODE_ENV=development
+      - API_URL=http://backend:8000
+    depends_on:
+      - backend
