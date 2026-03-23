@@ -38,7 +38,7 @@ Set `API_URL=http://host.docker.internal:8000` in `docker-compose.yml`, then:
 docker compose up
 ```
 
-The app will be available at http://localhost:8080. Source changes are reflected immediately without rebuilding.
+The app will be available at http://localhost:8083. Source changes are reflected immediately without rebuilding.
 
 To rebuild after dependency changes (`package.json`):
 
