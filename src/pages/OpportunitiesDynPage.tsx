@@ -55,10 +55,8 @@ const fetchProjects = async (): Promise<Project[]> => {
       throw new Error(`Failed to fetch projects: ${response.status}`);
     }
     const data = await response.json();
-    console.log("Projects data received:", data);
     return Array.isArray(data) ? data : [];
   } catch (error) {
-    console.error("Error fetching projects:", error);
     throw error;
   }
 };
@@ -76,7 +74,6 @@ export default function OpportunitiesDynPage() {
 
   const { data: portfolio } = usePortfolio();
 
-  console.log("Query state:", { projects, isLoading, error });
 
   // Check if user has invested in a project
   const hasInvested = (projectId: string): boolean => {

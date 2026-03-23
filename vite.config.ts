@@ -9,6 +9,11 @@ export default defineConfig(({ mode }) => ({
     host: "::",
     port: 8083,
     allowedHosts: ["www.fract-ion.com"],
+    hmr: {
+      host: "www.fract-ion.com",
+      protocol: "wss",
+      clientPort: 443,
+    },
   },
   plugins: [react(), mode === "development" && componentTagger()].filter(Boolean),
   resolve: {
